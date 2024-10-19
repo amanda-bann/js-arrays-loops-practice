@@ -18,20 +18,37 @@ var stuff = [
 //});
 
 // Exercise #2 - Remove an element from an array
-var removeItem = function (array, item) {
-  var index = array.indexOf(item);
+// var removeItem = function (array, item) {
+//   var index = array.indexOf(item);
 
-  if (index === -1) {
-    console.log(
-      `Sorry, no such item found in this array.`
-    );
-  } else {
-    array.splice(index, 1);
-    console.log(`Removed ${item} from the array.`);
+//   if (index === -1) {
+//     console.log(
+//       `Sorry, no such item found in this array.`
+//     );
+//   } else {
+//     array.splice(index, 1);
+//     console.log(`Removed ${item} from the array.`);
+//   }
+//   };
+
+//   removeItem(stuff, "coffee");
+//   console.log(stuff);
+//   removeItem(stuff, "sugar");
+//   console.log(stuff);
+
+// Exercise #3 - Filter an array
+// Using 'filter' method
+var filterStuff = stuff.filter(function (item) {
+  return item.includes("s");
+  });
+console.log(filterStuff);
+
+// Using 'for of' loop
+var funArray = [];
+  for (var item of stuff) {
+    if (item.includes("s")) {
+      funArray.push(item);
+    }
   }
-  };
+  console.log(funArray); 
 
-  removeItem(stuff, "coffee");
-  console.log(stuff);
-  removeItem(stuff, "sugar");
-  console.log(stuff);
